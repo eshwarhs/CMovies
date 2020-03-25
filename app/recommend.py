@@ -6,7 +6,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.feature_extraction.text import CountVectorizer
 
 pd.set_option('display.max_columns', 100)
-df = pd.read_csv('E:/PESU/Sem 6/WT2/Project/app/output.csv', encoding='latin-1')
+df = pd.read_csv('/home/ubuntu/CMovies/app/output.csv', encoding='latin-1')
 
 df = df[['Title','Genre','Director','Actors','Plot']]
 df['Actors'] = df['Actors'].map(lambda x: x.split(',')[:3])
