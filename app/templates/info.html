@@ -178,7 +178,7 @@
 $(document).ready(function(){
   $(".add").click(function(){
     var id = $(this).attr('id');
-    $.ajax({type: "GET",url: "http://127.0.0.1/add_to_list/"+id, success: function(result){
+    $.ajax({type: "GET",url: window.location.origin+"/add_to_list/"+id, success: function(result){
         //alert($ele.find("i").css("color")=="rgb(255, 255, 255)");
         $(".add").each(function(){
             var idx = $(this).attr('id');
@@ -203,7 +203,7 @@ $(document).ready(function(){
 $(document).ready(function(){
   $(".like").click(function(){
     var id = $(this).attr('id');
-    $.ajax({type: "GET",url: "http://127.0.0.1/like/"+id, success: function(result){
+    $.ajax({type: "GET",url: window.location.origin+"/like/"+id, success: function(result){
         //alert($ele.find("i").css("color")=="rgb(255, 255, 255)");
         $(".like").each(function(){
             var idx = $(this).attr('id');
