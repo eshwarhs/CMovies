@@ -808,3 +808,38 @@ body .login__secondary-cta__text--need-help:hover {
     padding: 0 20px;
     text-transform: uppercase;
 }
+
+.carousel-indicators li{
+  background-color: #e50914;
+}
+
+#inner1{
+    float:left; 
+    }
+    #inner2{
+    float:left; 
+    clear: left;
+    }
+
+
+.search_element{
+  background: black;
+  width: 200px;
+  padding: 5px;
+  color: white;
+}
+
+.search_element:hover{
+  background: #e50914;
+}
+
+.search_element a{
+  text-decoration: none;
+  color: white;
+}
+
+.row-head{
+  margin-left: 50px;
+  font-weight: bold;
+  color: #e5e5e5;
+}

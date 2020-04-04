@@ -7,17 +7,22 @@
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarToggler-1" aria-controls="navbarToggler-1" aria-expanded="false" aria-label="Toggle navigation"><i class="fas fa-bars" style="color: #e50914;font-size: 30px;"></i>
         </button>
         <div class="collapse navbar-collapse pull-xs-right justify-content-end" id="navbarToggler-1">
+            <div>
             <form action="" method="POST" class="searchform navbar-form" role="search">
                 {{ form1.hidden_tag() }}
                 <input type="hidden" value="search" name="view">
                 <div class="input-group">
-                    {{ form1.search_field(class="form-control") }}
+                    {{ form1.search_field(class="form-control search") }}
                     {{ form1.search_field.label }}
                     <div class="input-group-btn">
                         <button class="btn" type="submit"><i class="fa fa-search" style="color: black;"></i></button>
                     </div>
                 </div>
             </form>
+            <div style="padding: 10px 15px;position: absolute;z-index: 50;margin-top: 50px;" id="search-res">
+              
+            </div>
+          </div>
             <ul class="navbar-nav mt-2 mt-md-0">
                 {% if current_user.is_authenticated %}
                 <li class="nav-item">
@@ -118,4 +123,37 @@
 	</div>
 </center>
 </div>
+<script>
+$(document).ready(function(){
+  $(".search").keyup(function(){
+    setTimeout(function(){
+        var ser = $(".search").val();
+        //console.log(ser);
+        container = document.getElementById("search-res");
+        container.innerHTML = '';
+        if(ser!='')
+        {
+          $.ajax({type: "GET",url: window.location.origin+"/getsearchresults/"+ser,dataType: 'json', complete: function(result){
+            res = JSON.parse(result.responseText);
+            for (var i = 0; i <res.length; i++) {
+              var div = document.createElement("div");
+              var x1 = document.createElement("a");
+              x1.innerHTML = res[i];
+              //console.log(result);
+              //x1.innerHTML = res[i];
+              //console.log(res[i]);
+              var s = "/search/"+res[i];
+              //console.log(s);
+              x1.href = s;
+              x1.style.display="block";
+              div.classList.add("search_element");
+              div.appendChild(x1);
+              container.appendChild(div);
+          }  
+        }});
+      }
+    },1000);
+  });
+});
+</script>
 {% endblock bodycontent %}

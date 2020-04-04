@@ -7,6 +7,7 @@
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarToggler-1" aria-controls="navbarToggler-1" aria-expanded="false" aria-label="Toggle navigation"><i class="fas fa-bars" style="color: #e50914;font-size: 30px;"></i>
         </button>
         <div class="collapse navbar-collapse pull-xs-right justify-content-end" id="navbarToggler-1">
+          <div>
             <form action="" method="POST" class="searchform navbar-form" role="search">
                 {{ form.hidden_tag() }}
                 <input type="hidden" value="search" name="view">
@@ -18,6 +19,10 @@
                     </div>
                 </div>
             </form>
+            <div style="padding: 10px 15px;position: absolute;z-index: 50;margin-top: 50px;" id="search-res">
+              
+            </div>
+          </div>
             <ul class="navbar-nav mt-2 mt-md-0">
                 {% if current_user.is_authenticated %}
                 <li class="nav-item active">
@@ -109,7 +114,7 @@
 </header>
 </center>
 <div class="contain main-container">
-  <h3 style="margin-left: 50px;font-weight: bold;color: white;">Recommended for You</h3>
+  <h3 class="row-head">Recommended for You</h3>
   <div class="row">
     <div class="row__inner">
         {% for movie in recommendx %}
@@ -132,7 +137,7 @@
     </div>
   </div>
   {% if my_list|length > 0 %}
-      <h3 style="margin-left: 50px;font-weight: bold;color: white;">My List</h3>
+      <h3 class="row-head">My List</h3>
       <div class="row">
         <div class="row__inner">
             {% for movie in my_list %}
@@ -155,7 +160,7 @@
         </div>
       </div>
   {% endif %}
-  <h3 style="margin-left: 50px;font-weight: bold;color: white;">Comedies</h3>
+  <h3 class="row-head">Comedies</h3>
   <div class="row">
     <div class="row__inner">
         {% for movie in comedies %}
@@ -177,7 +182,7 @@
       {% endfor %}
     </div>
   </div>
-  <h3 style="margin-left: 50px;font-weight: bold;color: white;">Indian Movies</h3>
+  <h3 class="row-head">Indian Movies</h3>
   <div class="row">
     <div class="row__inner">
         {% for movie in indian %}
@@ -253,7 +258,33 @@ $(document).ready(function(){
 <script>
 $(document).ready(function(){
   $(".search").keyup(function(){
-    $(".search").css("background-color", "pink");
+    setTimeout(function(){
+        var ser = $(".search").val();
+        //console.log(ser);
+        container = document.getElementById("search-res");
+        container.innerHTML = '';
+        if(ser!='')
+        {
+          $.ajax({type: "GET",url: window.location.origin+"/getsearchresults/"+ser,dataType: 'json', complete: function(result){
+            res = JSON.parse(result.responseText);
+            for (var i = 0; i <res.length; i++) {
+              var div = document.createElement("div");
+              var x1 = document.createElement("a");
+              x1.innerHTML = res[i];
+              //console.log(result);
+              //x1.innerHTML = res[i];
+              //console.log(res[i]);
+              var s = "/search/"+res[i];
+              //console.log(s);
+              x1.href = s;
+              x1.style.display="block";
+              div.classList.add("search_element");
+              div.appendChild(x1);
+              container.appendChild(div);
+          }  
+          }});
+      }
+    },1000);
   });
 });
 </script>

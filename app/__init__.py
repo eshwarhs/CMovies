@@ -4,6 +4,7 @@ from flask_bcrypt import Bcrypt
 from flask_login import LoginManager
 from elasticsearch import Elasticsearch
 import os
+from flask_ngrok import run_with_ngrok
 
 ELASTICSEARCH_URL = os.environ.get('ELASTICSEARCH_URL')
 

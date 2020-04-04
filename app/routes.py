@@ -59,8 +59,7 @@ def home():
 	lv_id = []
 	watchlist = WatchHistory.query.with_entities(WatchHistory.movieid).filter_by(userid=current_user.userid).all()
 	watchlist = [i[0] for i in watchlist]
-	lv_id = lv_id + watchlist
-	lv_id = lv_id + likes
+	lv_id = lv_id + watchlist + likes
 	lv_id = set(lv_id)
 	lv_id = list(lv_id)
 	recommendx = []
@@ -75,7 +74,6 @@ def home():
 		recommendx = Movies.query.filter(Movies.movie_title.in_(temp)).all()
 
 	
-
 	mylist_all = MyList.query.with_entities(MyList.movieid).filter_by(userid=current_user.userid).all()
 	mylist = [i[0] for i in mylist_all]
 	my_list = Movies.query.filter(Movies.movieid.in_(mylist)).limit(20).all() 
@@ -365,3 +363,16 @@ def logout():
 	logout_user()
 	return redirect(url_for('landing'))
 
+
+
+@app.route("/getsearchresults/<stri>")
+@login_required
+def search_x(stri):
+	f = open('app/search.txt', 'r+')
+	x = f.readlines()
+	f.close()
+	x = [k.strip() for k in x]
+	res = [i for i in x if i.lower().startswith(stri.lower())]
+	if(len(res)>7):
+		res=res[:6]
+	return jsonify(res),200
