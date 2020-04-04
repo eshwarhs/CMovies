@@ -1,7 +1,7 @@
 ﻿
+1917
 12 Angry Men
 12 Years a Slave
-1917
 2001: A Space Odyssey
 3 Idiots
 A Beautiful Mind
@@ -278,12 +278,10 @@ Hebrew
 Nepali
 Punjabi
 Czech
-Hebrew
 Thai
 Sicilian
 Esperanto
 Swahili
-Xhosa
 Zulu
 Sindarin
 Quenya
@@ -297,7 +295,6 @@ Sam Mendes
 Stanley Kubrick
 Rajkumar Hirani
 Ron Howard
-Stanley Kubrick
 Billy Wilder
 Chan-wook Park
 Katsuhiro Ôtomo
@@ -305,7 +302,6 @@ Ron Clements
 Ridley Scott
 Joseph L. Mankiewicz
 Milos Forman
-Sam Mendes
 Tony Kaye
 Alejandro G. Iñárritu
 Jean-Pierre Jeunet
@@ -313,15 +309,12 @@ Sriram Raghavan
 Andrei Tarkovsky
 Francis Ford Coppola
 Anthony Russo
-Anthony Russo
 Çagan Irmak
 Majid Majidi
 Robert Zemeckis
 Christopher Nolan
 Richard Linklater
-Richard Linklater
 William Wyler
-Ridley Scott
 Mel Gibson
 George Roy Hill
 Nadine Labaki
@@ -343,8 +336,6 @@ Ingmar Bergman
 Alfred Hitchcock
 John McTiernan
 Quentin Tarantino
-Billy Wilder
-Stanley Kubrick
 Nishikant Kamat
 Juan José Campanella
 Michel Gondry
@@ -353,20 +344,14 @@ Joel Coen
 David Fincher
 Andrew Stanton
 James Mangold
-Robert Zemeckis
-Stanley Kubrick
 Anurag Kashyap
-Ridley Scott
-David Fincher
 Victor Fleming
 Gus Van Sant
-Martin Scorsese
 Clint Eastwood
 Peter Farrelly
 Harold Ramis
 James Gunn
 Lasse Hallström
-Mel Gibson
 David Yates
 Hayao Miyazaki
 Michael Mann
@@ -378,19 +363,13 @@ Akira Kurosawa
 Sergio Leone
 Jim Sheridan
 Denis Villeneuve
-Quentin Tarantino
 Pete Docter
-Christopher Nolan
 Sean Penn
-Frank Capra
 Frank Capra
 Thomas Vinterberg
 Asghar Farhadi
 Todd Phillips
 Stanley Kramer
-Steven Spielberg
-Hayao Miyazaki
-Quentin Tarantino
 Makoto Shinkai
 Sergio Pablos
 Curtis Hanson
@@ -405,129 +384,62 @@ Henri-Georges Clouzot
 François Truffaut
 Terry Jones
 Guy Ritchie
-James Mangold
 Luc Besson
 Fritz Lang
 George Miller
 Adam Elliot
-Fritz Lang
-Clint Eastwood
-Charles Chaplin
-Pete Docter
 Terry Gilliam
-Frank Capra
-Sidney Lumet
 Ethan Coen
-Alfred Hitchcock
 Giuseppe Tornatore
-Chan-wook Park
 Elia Kazan
-Sergio Leone
-Sergio Leone
-Milos Forman
-Rajkumar Hirani
 Guillermo del Toro
 Bong Joon Ho
 Wim Wenders
-Stanley Kubrick
-Sergio Leone
-Ingmar Bergman
 Oliver Stone
-Hayao Miyazaki
-Denis Villeneuve
-Alfred Hitchcock
-Quentin Tarantino
-Martin Scorsese
-Steven Spielberg
-Akira Kurosawa
 Rakeysh Omprakash Mehra
-Akira Kurosawa
-Alfred Hitchcock
-Alfred Hitchcock
 Damián Szifron
 Darren Aronofsky
-Quentin Tarantino
 John G. Avildsen
 Lenny Abrahamson
-Ron Howard
-Steven Spielberg
 Brian De Palma
-Steven Spielberg
-David Fincher
 Masaki Kobayashi
 Buster Keaton
-Akira Kurosawa
-Martin Scorsese
 Stanley Donen
-Ingmar Bergman
-Guy Ritchie
-Billy Wilder
 Bob Persichetti
-Hayao Miyazaki
 Rob Reiner
 George Lucas
 Irvin Kershner
 Richard Marquand
-Billy Wilder
 Aamir Khan
-Martin Scorsese
 James Cameron
-Billy Wilder
-Joel Coen
-David Lean
-Christopher Nolan
-Christopher Nolan
 Michael Cimino
-Martin Scorsese
 David Lynch
 Clyde Bruckman
-Francis Ford Coppola
-Charles Chaplin
 Wes Anderson
-Charles Chaplin
 John Sturges
 Frank Darabont
 Tate Taylor
 Olivier Nakache
-Charles Chaplin
 Roger Allers
 Florian Henckel von Donnersmarck
 Peter Jackson
-Peter Jackson
-Peter Jackson
 Lana Wachowski
-Christopher Nolan
-Rob Reiner
 Michael Powell
-Frank Darabont
-Stanley Kubrick
 Jonathan Demme
 M. Night Shyamalan
-George Roy Hill
-James Cameron
 John Carpenter
 Carol Reed
 John Huston
-Peter Weir
 Bryan Singer
-Martin Scorsese
 Paul Thomas Anderson
 Martin McDonagh
 Robert Mulligan
-Hayao Miyazaki
 John Lasseter
-Lee Unkrich
 Danny Boyle
 Yasujirô Ozu
-Clint Eastwood
-Pete Docter
 James McTeigue
-Alfred Hitchcock
-Andrew Stanton
 Gavin O'Connor
 Damien Chazelle
-Billy Wilder
-Akira Kurosawa
 Drama
 Biography
 History
