@@ -65,13 +65,14 @@ def home():
 	recommendx = []
 	if(len(lv_id)==0):
 		recommendx = Movies.query.order_by(func.random()).limit(20).all()
-		#print(recommendx)
+		print(recommendx)
 	else:
 		o = Movies.query.with_entities(Movies.movie_title).filter(Movies.movieid.in_(lv_id)).all()
 		o = [i[0] for i in o]
 		temp = recommendations(o)
-		#print(temp)
+		print(temp)
 		recommendx = Movies.query.filter(Movies.movie_title.in_(temp)).all()
+
 
 	
 	mylist_all = MyList.query.with_entities(MyList.movieid).filter_by(userid=current_user.userid).all()

@@ -16,14 +16,14 @@ Amadeus
 American Beauty
 American History X
 Amores perros
-Amélie
+Amelie
 Andhadhun
 Andrei Rublev
 Apocalypse Now
 Avengers: Endgame
 Avengers: Infinity War
 Babam ve Oglum
-Bacheha-Ye aseman
+Children of Heaven
 Back to the Future
 Batman Begins
 Before Sunrise
@@ -47,7 +47,7 @@ Cool Hand Luke
 Dangal
 Das Boot
 Dead Poets Society
-Det sjunde inseglet
+The Seventh Seal
 Dial M for Murder
 Die Hard
 Django Unchained
@@ -83,9 +83,9 @@ Heat
 Hotel Rwanda
 How to Train Your Dragon
 Howl's Moving Castle
-Idi i smotri
+Come and See
 Ikiru
-Il buono, il brutto, il cattivo
+The Good, the Bad and the Ugly
 In the Name of the Father
 Incendies
 Inglourious Basterds
@@ -98,7 +98,7 @@ Jagten
 Joker
 Judgment at Nuremberg
 Jurassic Park
-Kaze no tani no Naushika
+Nausicaa of the Valley of the Wind 
 Kill Bill: Vol 1
 Klaus
 LA Confidential
@@ -221,7 +221,7 @@ The Wolf of Wall Street
 There Will Be Blood
 Three Billboards Outside Ebbing, Missouri
 To Kill a Mockingbird
-Tonari no Totoro
+My Neighbor Totoro
 Toy Story
 Toy Story 3
 Trainspotting
@@ -257,8 +257,7 @@ Hungarian
 Arabic
 Scottish Gaelic
 Amharic
-Portuguese
-Hindi 
+Portuguese 
 Tamil
 Telugu
 Swedish
@@ -287,7 +286,6 @@ Sindarin
 Quenya
 Old English
 Norwegian
-Hungarian
 American Sign Language
 Sidney Lumet
 Steve McQueen
