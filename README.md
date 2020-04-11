@@ -8,8 +8,7 @@ This website is done as a part of Web Technologies II Laboratory Project.
 
 Steps to run the website:
 <li>pip install -r requirements.txt</li>
-<li>cd elasticsearch-7.6.1/bin</li>
-<li>elasticsearch-service.bat start</li>
+<li>Setup and start Elasticsearch as a service</li>
 <li>python run.py</li>
 <br><br>
 The website is served on http://127.0.0.1
