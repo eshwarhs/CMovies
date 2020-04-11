@@ -29,7 +29,7 @@ for index, row in df.iterrows():
     # extracting the words by passing the text
     r.extract_keywords_from_text(plot)
 
-    # getting the dictionary whith key words and their scores
+    # getting the dictionary with key words and their scores
     key_words_dict_scores = r.get_word_degrees()
     
     # assigning the key words to the new column
@@ -78,9 +78,9 @@ def recommendations(titles, cosine_sim = cosine_sim):
         # creating a Series with the similarity scores in descending order
         score_series = pd.Series(cosine_sim[idx]).sort_values(ascending = False)
         # getting the indexes of the 10 most similar movies
-        top_10_indexes = list(score_series.iloc[1:21].index)
+        top_20_indexes = list(score_series.iloc[1:21].index)
         
-        # populating the list with the titles of the best 10 matching movies
+        # populating the list with the titles of the best 20 matching movies
         x=1
         for i in top_10_indexes:
             recommended_movies[list(df.index)[i]] = score_series.iloc[x:x+1].values[0]
