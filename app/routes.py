@@ -148,22 +148,19 @@ def clear():
 	return redirect(url_for('history'))
 
 
-
 @app.route("/latest", methods=['GET','POST'])
 @login_required
 def latest():
 	views_all = Views.query.with_entities(Views.movieid).order_by(Views.views.desc()).limit(20).all()
 	most_views = [i[0] for i in views_all]
 	trending = Movies.query.filter(Movies.movieid.in_(most_views)).limit(20).all()
-
+	new_movies = Movies.query.filter(Movies.release_year.in_(["2019","2018","2017"])).order_by(Movies.release_year.desc()).limit(20).all()
+	
 	likes_all = Likes.query.with_entities(Likes.movieid).filter_by(userid=current_user.userid).all()
 	likes = [i[0] for i in likes_all]
 
 	mylist_all = MyList.query.with_entities(MyList.movieid).filter_by(userid=current_user.userid).all()
 	mylist = [i[0] for i in mylist_all]
-
-	new_movies = Movies.query.filter(Movies.release_year.in_(["2019","2018","2017"])).order_by(Movies.release_year.desc()).limit(20).all()
-
 
 	form = SearchForm()
 	if form.validate_on_submit():
