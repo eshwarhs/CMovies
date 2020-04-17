@@ -51,34 +51,6 @@ def get_language(link):
 	return languages
 
 def add_to_db():
-	'''with sqlite3.connect("cmovies.db") as con:
-		cur = con.cursor()
-		for i in data:
-			movieid = str(i['movieid'])
-			title = str(i['movie_title'])
-			title = title.replace("'","''")
-			print(title)
-			desc = str(i['desc'])
-			d = desc.replace("'", "''").replace("\\","")
-			desc = d
-			year = str(i['year'])
-			genre = i['genres']
-			genres = ','.join(genre)
-			movie_length = str(i['movie_length'])
-			language = str(i['language'])
-			director = str(i['director'])
-			director = director.replace("'", "''")
-			star_cast = str(i['star_cast'])
-			star_cast = star_cast.replace("'", "''")
-			movie_link = str(i['movie_link'])
-			poster = str(i['poster'])
-			youtube_id = str(i['youtube_id'])
-			#sql = "insert into movies VALUES (movieid,title,desc,year,genre,movie_length,language,director,star_cast,movie_link,poster,youtube_id)"
-			sql = "insert into movies(movieid,movie_title,desc,release_year,genre,movie_length,language,director,act_cast,movie_link,movie_pic,youtube_id) VALUES ('"+movieid+"','"+title+"','"+desc+"','"+year+"','"+genres+"','"+movie_length+"','"+language+"','"+director+"','"+star_cast+"','"+movie_link+"','"+poster+"','"+youtube_id+"')"
-			#print(sql)
-			cur.execute(sql)
-		cur.execute("delete from movies where youtube_id='Not Available'")
-		con.commit()'''
 	firstline = True
 	with open('output.csv', 'r') as file:
 		reader = csv.reader(file)
@@ -153,28 +125,6 @@ def scrap_imdb():
 					}
 			imdb.append(data)'''
 
-'''url = 'https://www.imdb.com/chart/moviemeter/?ref_=nv_mv_mpm'
-response = requests.get(url)
-soup = BeautifulSoup(response.text, 'lxml')
-
-movies = soup.select('td.titleColumn')
-links = [a.attrs.get('href') for a in soup.select('td.titleColumn a')]
-crew = [a.attrs.get('title') for a in soup.select('td.titleColumn a')]
-
-for index in range(0, len(movies)):
-	# Seperate movie into: 'place', 'title', 'year'
-	movie_string = movies[index].get_text()
-	movie = (' '.join(movie_string.split()).replace('.', ''))
-	movie_title = movie[:movie.find('(')-1]
-	year = re.search('\((.*?)\)', movie_string).group(1)
-	year = int(year)
-	if (year < 2020):
-		data = {"movie_title": movie_title,
-				"year": year,
-				"star_cast": crew[index],
-				"link": links[index]}
-		if data not in imdb:
-			imdb.append(data)'''
 
 #scrap_imdb()
 

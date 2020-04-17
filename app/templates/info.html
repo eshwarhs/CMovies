@@ -60,27 +60,25 @@
     <body onload="fetch()">
         <nav class="navbar navbar-expand-lg navbar-trans navbar-inverse sticky-top">
             <div class="container">
-                <!--<a class="navbar-brand" href="#">Bootstrap 4 Cover Nav</a>-->
                 <img src="{{ url_for('static', filename='logo.png') }}" class="nav-logo">
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarToggler-1" aria-controls="navbarToggler-1" aria-expanded="false" aria-label="Toggle navigation"><i class="fas fa-bars" style="color: #e50914;font-size: 30px;"></i>
                 </button>
                 <div class="collapse navbar-collapse pull-xs-right justify-content-end" id="navbarToggler-1">
                     <div>
-            <form action="" method="POST" class="searchform navbar-form" role="search">
-                {{ form.hidden_tag() }}
-                <input type="hidden" value="search" name="view">
-                <div class="input-group">
-                    {{ form.search_field(class="form-control search") }}
-                    {{ form.search_field.label }}
-                    <div class="input-group-btn">
-                        <button class="btn" type="submit"><i class="fa fa-search" style="color: black;"></i></button>
+                        <form action="" method="POST" class="searchform navbar-form" role="search">
+                            {{ form.hidden_tag() }}
+                            <input type="hidden" value="search" name="view">
+                            <div class="input-group">
+                                {{ form.search_field(class="form-control search") }}
+                                {{ form.search_field.label }}
+                                <div class="input-group-btn">
+                                    <button class="btn" type="submit"><i class="fa fa-search" style="color: black;"></i></button>
+                                </div>
+                            </div>
+                        </form>
+                        <div style="padding: 10px 15px;position: absolute;z-index: 50;margin-top: 50px;" id="search-res">
+                        </div>
                     </div>
-                </div>
-            </form>
-            <div style="padding: 10px 15px;position: absolute;z-index: 50;margin-top: 50px;" id="search-res">
-              
-            </div>
-          </div>
                     <ul class="navbar-nav mt-2 mt-md-0">
                         {% if current_user.is_authenticated %}
                         <li class="nav-item">
@@ -131,10 +129,10 @@
                             <span></span>
                         </div>
                         <div class="score">
-                                <p>{{ movie.release_year }} | </p>
-                                <p>{{ movie.movie_length }} | </p>
-                                <p>{{ movie.language }}</p>
-                            </div>
+                            <p>{{ movie.release_year }} | </p>
+                            <p>{{ movie.movie_length }} | </p>
+                            <p>{{ movie.language }}</p>
+                        </div>
                         <div class="about">
                             <div class="overview">
                                 <h6><b>Description</b></h6>
@@ -157,8 +155,16 @@
                                 </ul>
                             </div>
                             <div class="stats">
-                                <div class="views" style="display: inline-block;"><i class="fas fa-eye" style="display: inline-block;padding-right: 10px;"></i><b><p id="view_count" style="display: inline-block;font-size: 17px;"></p></b></div>
-                                <div class="likes" style="display: inline-block;"><i class="far fa-thumbs-up" style="display: inline-block;padding-right: 10px;"></i><b><p id="like_count" style="display: inline-block;font-size: 17px;"></p></div>
+                                <div class="views" style="display: inline-block;">
+                                    <i class="fas fa-eye" style="display: inline-block;padding-right: 10px;"></i>
+                                    <b>
+                                        <p id="view_count" style="display: inline-block;font-size: 17px;"></p>
+                                    </b>
+                                </div>
+                                <div class="likes" style="display: inline-block;">
+                                    <i class="far fa-thumbs-up" style="display: inline-block;padding-right: 10px;"></i><b>
+                                    <p id="like_count" style="display: inline-block;font-size: 17px;"></p>
+                                </div>
                             </div>
                         </div>
                         <div class="meta-actions">
@@ -172,7 +178,6 @@
                                 <li class="fff">
                                     <a href="{{ url_for('watch',youtube_id=movie.youtube_id) }}" ><i class="fa fa-play play_new"></i></a>
                                 </li>
-                                
                             </ul>
                         </div>
                     </div>
@@ -180,88 +185,88 @@
             </div>
         </div>
         <script>
-$(document).ready(function(){
-  $(".add").click(function(){
-    var id = $(this).attr('id');
-    $.ajax({type: "GET",url: window.location.origin+"/add_to_list/"+id, success: function(result){
-        //alert($ele.find("i").css("color")=="rgb(255, 255, 255)");
-        $(".add").each(function(){
-            var idx = $(this).attr('id');
-            if(idx==id){
-                console.log("YES");
-                if ($(this).find("i").css("color")=="rgb(255, 255, 255)")
-                {
-                    $(this).find("i").css("color","blue");
-                }
-                else
-                {
-                    $(this).find("i").css("color","rgb(255, 255, 255)");
-                }
-            }
-        });
-        
-    }});
-  });
-});
-</script>
-<script>
-$(document).ready(function(){
-  $(".like").click(function(){
-    var id = $(this).attr('id');
-    $.ajax({type: "GET",url: window.location.origin+"/like/"+id, success: function(result){
-        //alert($ele.find("i").css("color")=="rgb(255, 255, 255)");
-        $(".like").each(function(){
-            var idx = $(this).attr('id');
-            if(idx==id){
-                console.log("YES");
-                if ($(this).find("i").css("color")=="rgb(255, 255, 255)")
-                {
-                    $(this).find("i").css("color","#e50914");
-                }
-                else
-                {
-                    $(this).find("i").css("color","rgb(255, 255, 255)");
-                }
-            }
-        });
-        
-    }});
-  });
-});
-</script>
-<script>
-$(document).ready(function(){
-  $(".search").keyup(function(){
-    setTimeout(function(){
-        var ser = $(".search").val();
-        //console.log(ser);
-        container = document.getElementById("search-res");
-        container.innerHTML = '';
-        if(ser!='')
-        {
-          $.ajax({type: "GET",url: window.location.origin+"/getsearchresults/"+ser,dataType: 'json', complete: function(result){
-            res = JSON.parse(result.responseText);
-            for (var i = 0; i <res.length; i++) {
-              var div = document.createElement("div");
-              var x1 = document.createElement("a");
-              x1.innerHTML = res[i];
-              //console.log(result);
-              //x1.innerHTML = res[i];
-              //console.log(res[i]);
-              var s = "/search/"+res[i];
-              //console.log(s);
-              x1.href = s;
-              x1.style.display="block";
-              div.classList.add("search_element");
-              div.appendChild(x1);
-              container.appendChild(div);
-          }  
-          }});
-      }
-    },1000);
-  });
-});
-</script>
+            $(document).ready(function(){
+              $(".add").click(function(){
+                var id = $(this).attr('id');
+                $.ajax({type: "GET",url: window.location.origin+"/add_to_list/"+id, success: function(result){
+                    //alert($ele.find("i").css("color")=="rgb(255, 255, 255)");
+                    $(".add").each(function(){
+                        var idx = $(this).attr('id');
+                        if(idx==id){
+                            console.log("YES");
+                            if ($(this).find("i").css("color")=="rgb(255, 255, 255)")
+                            {
+                                $(this).find("i").css("color","blue");
+                            }
+                            else
+                            {
+                                $(this).find("i").css("color","rgb(255, 255, 255)");
+                            }
+                        }
+                    });
+                    
+                }});
+              });
+            });
+        </script>
+        <script>
+            $(document).ready(function(){
+              $(".like").click(function(){
+                var id = $(this).attr('id');
+                $.ajax({type: "GET",url: window.location.origin+"/like/"+id, success: function(result){
+                    //alert($ele.find("i").css("color")=="rgb(255, 255, 255)");
+                    $(".like").each(function(){
+                        var idx = $(this).attr('id');
+                        if(idx==id){
+                            console.log("YES");
+                            if ($(this).find("i").css("color")=="rgb(255, 255, 255)")
+                            {
+                                $(this).find("i").css("color","#e50914");
+                            }
+                            else
+                            {
+                                $(this).find("i").css("color","rgb(255, 255, 255)");
+                            }
+                        }
+                    });
+                    
+                }});
+              });
+            });
+        </script>
+        <script>
+            $(document).ready(function(){
+              $(".search").keyup(function(){
+                setTimeout(function(){
+                    var ser = $(".search").val();
+                    //console.log(ser);
+                    container = document.getElementById("search-res");
+                    container.innerHTML = '';
+                    if(ser!='')
+                    {
+                      $.ajax({type: "GET",url: window.location.origin+"/getsearchresults/"+ser,dataType: 'json', complete: function(result){
+                        res = JSON.parse(result.responseText);
+                        for (var i = 0; i <res.length; i++) {
+                          var div = document.createElement("div");
+                          var x1 = document.createElement("a");
+                          x1.innerHTML = res[i];
+                          //console.log(result);
+                          //x1.innerHTML = res[i];
+                          //console.log(res[i]);
+                          var s = "/search/"+res[i];
+                          //console.log(s);
+                          x1.href = s;
+                          x1.style.display="block";
+                          div.classList.add("search_element");
+                          div.appendChild(x1);
+                          container.appendChild(div);
+                      }  
+                      }});
+                  }
+                },1000);
+              });
+            });
+        </script>
         <footer id="footer" class="footer-1" >
             <div class="main-footer widgets-dark typo-light">
                 <div class="container">

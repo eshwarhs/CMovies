@@ -65,7 +65,8 @@ def home():
 	recommendx = []
 	if(len(lv_id)==0):
 		recommendx = Movies.query.order_by(func.random()).limit(20).all()
-		print(recommendx)
+		print("No user activity yet!")
+		#print(recommendx)
 	else:
 		o = Movies.query.with_entities(Movies.movie_title).filter(Movies.movieid.in_(lv_id)).all()
 		o = [i[0] for i in o]
